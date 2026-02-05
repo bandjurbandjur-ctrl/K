@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buking - Rezervacija</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Buking</h1>
+        <p>Andjelija, vaš najbolji dečko na svetu je napravio rezervaciju, za potvrdu ispunite sledeća polja tačno.</p>
+        
+        <!-- Pitanje 1 -->
+        <div class="question">
+            <p>Ko vozi svojim kolima do destinacije?</p>
+            <button id="aleksandar" class="answer">Aleksandar</button>
+            <button id="andjelija" class="answer">Andjelija</button>
+        </div>
+
+        <!-- Pitanje 2 -->
+        <div class="question">
+            <p>Da li ću smarati da platim deo rezervacije?</p>
+            <button id="da" class="answer">Da</button>
+            <button id="ne" class="answer">Ne</button>
+        </div>
+
+        <!-- Pitanje 3 -->
+        <div class="question">
+            <p>Koliko ste uzbuđeni oko ovog vikenda?</p>
+            <input type="range" id="slider" min="0" max="100" value="0">
+            <p id="slider-text">Ukinuto češkanje na mesec dana</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
