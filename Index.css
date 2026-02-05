@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #007bff; /* Plava boja pozadine */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #0056b3;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+button {
+    background-color: #ffffff;
+    color: #0056b3;
+    border: 2px solid #ffffff;
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #f0f0f0;
+}
+
+button.selected {
+    background-color: #28a745;
+}
+
+button.vibrate {
+    animation: vibrate 0.3s infinite;
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(5px); }
+}
+
+input[type="range"] {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#slider-text {
+    margin-top: 10px;
+}
