@@ -1,50 +1,41 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Potvrda rezervacije 💕</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUKING</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <h1 class="site-title">BUKING</h1>
+        <div class="question">
+            <p>Andjelija, vaš najbolji dečko je napravio rezervaciju za vas za Dan zaljubljenih. Kako biste je potvrdili, odgovorite tačno na sledeća 3 pitanja.</p>
+        </div>
 
-<div class="container">
-    <h1>
-        Andjelija, vaš najbolji dečko je napravio rezervaciju za vas za Dan zaljubljenih 💘  
-        <br><br>
-        Kako biste je potvrdili, odgovorite tačno na sledeća 3 pitanja:
-    </h1>
-
-    <!-- Pitanje 1 -->
-    <div class="question">
-        <p>1️⃣ Da li ćete tokom vikenda jednako da češkate svog dečka koliko i on vas?</p>
-        <div class="answers">
+        <div class="question">
+            <p>Da li ćete tokom vikenda jednako da českate svog dečka koliko i on vas?</p>
             <button class="btn correct">Da</button>
             <button class="btn wrong">Ne</button>
         </div>
-    </div>
 
-    <!-- Pitanje 2 -->
-    <div class="question">
-        <p>2️⃣ Prevucite koliko volite svog dečka 💕</p>
-        <input type="range" min="0" max="100" value="0" id="loveSlider">
-        <div id="sliderText"></div>
-    </div>
+        <div class="question">
+            <p>Prevucite koliko volite svog dečka</p>
+            <input type="range" id="loveSlider" min="0" max="100" value="0">
+            <p id="sliderText"></p>
+        </div>
 
-    <!-- Pitanje 3 -->
-    <div class="question">
-        <p id="q3Text">3️⃣ Da li pristajete da ne budete bla bla bla tokom vikenda?</p>
-        <div class="answers">
+        <div class="question">
+            <p>Da li pristajete da ne budete bla bla bla tokom vikenda?</p>
             <button class="btn correct">Da</button>
             <button class="btn wrong">Ne</button>
         </div>
+
+        <div id="popup">
+            <p>Rezervacija uspešno potvrđena!</p>
+        </div>
     </div>
-</div>
 
-<!-- Popup -->
-<div class="popup" id="popup">
-    💖 Rezervacija uspešno potvrđena! 💖
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
