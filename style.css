@@ -30,7 +30,7 @@ body {
     display: none;
 }
 
-.question:first-of-type {
+.question.intro {
     display: block;
 }
 
