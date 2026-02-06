@@ -1,52 +1,40 @@
-// Sva dugmad sa klasom "answer"
-const buttons = document.querySelectorAll(".answer");
+let correctAnswers = 0;
+let sliderDone = false;
 
-// Funkcija za skidanje selekcije sa dugmadi u istoj grupi
-function clearSelection(parent) {
-    const groupButtons = parent.querySelectorAll("button");
-    groupButtons.forEach(btn => {
-        btn.classList.remove("selected", "vibrate");
-    });
-}
-
-// Klik na dugmad
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-        const questionDiv = button.closest(".question");
-
-        // očisti prethodni izbor u toj sekciji
-        clearSelection(questionDiv);
-
-        // tačni odgovori (po tvom tekstu 😉)
-        const correctAnswers = ["andjelija", "ne"];
-
-        if (correctAnswers.includes(button.id)) {
-            button.classList.add("selected");
+document.querySelectorAll(".btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        if (btn.classList.contains("correct")) {
+            if (!btn.classList.contains("active")) {
+                btn.classList.add("active");
+                correctAnswers++;
+                checkAll();
+            }
         } else {
-            button.classList.add("vibrate");
+            btn.classList.add("active");
+            btn.textContent = "bla bla bla, probaj opet 😜";
 
-            // zaustavi vibraciju nakon kratkog vremena
             setTimeout(() => {
-                button.classList.remove("vibrate");
-            }, 600);
+                btn.textContent = "Da";
+                btn.classList.remove("wrong");
+                btn.classList.add("correct");
+                btn.classList.remove("active");
+            }, 1000);
         }
     });
 });
 
-// Slider logika
-const slider = document.getElementById("slider");
-const sliderText = document.getElementById("slider-text");
+const slider = document.getElementById("loveSlider");
+const sliderText = document.getElementById("sliderText");
 
-slider.addEventListener("input", () => {
-    const value = slider.value;
-
-    if (value < 25) {
-        sliderText.textContent = "Ukinuto češkanje na mesec dana 😐";
-    } else if (value < 50) {
-        sliderText.textContent = "Može da prođe 🙂";
-    } else if (value < 75) {
-        sliderText.textContent = "Baš smo uzbuđeni 😄";
-    } else {
-        sliderText.textContent = "PREUZBUĐENI!!! 🔥❤️";
-    }
+slider.addEventListener("change", () => {
+    slider.value = 100;
+    sliderDone = true;
+    sliderText.textContent = "Nismo ni sumnjali 😉";
+    checkAll();
 });
+
+function checkAll() {
+    if (correctAnswers >= 2 && sliderDone) {
+        document.getElementById("popup").classList.add("show");
+    }
+}
