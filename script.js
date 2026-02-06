@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const popup = document.getElementById("popup");
     const slider = document.getElementById("loveSlider");
     const sliderText = document.getElementById("sliderText");
-    const questions = document.querySelectorAll(".question");
+    const questions = Array.from(document.querySelectorAll(".question")).filter(q => !q.classList.contains("intro"));
 
-    let currentQuestion = 0;
+    let currentQuestion = -1;
 
     function showNextQuestion() {
         if (currentQuestion + 1 < questions.length) {
@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
             questions[currentQuestion].style.display = "block";
         }
     }
+
+    showNextQuestion(); // prikazujemo prvo pitanje odmah
 
     // dugmad
     document.querySelectorAll(".btn").forEach(btn => {
